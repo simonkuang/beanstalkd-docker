@@ -1,0 +1,15 @@
+version: '3'
+services:
+  beanstalkd:
+    image: simonkuang/beanstalkd
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - "./data:/data/beanstalkd"
+    ports:
+      - "11300:11300"
+
